@@ -12,26 +12,36 @@ class Keyboard extends Component {
       }
 
      handleClick = (event) => {
-        this.props.keyboardType(event.currentTarget.textContent);
+        this.props.typeKeyboard(event.currentTarget.textContent);
       };
 
     render() {
      
        return (
         <div style={{display: "flex",flexWrap:"wrap",justifyContent:"center",width:"340px",textAlign:"center",marginBottom:'5px'}}>
-        <div style={{display: "flex",flexWrap:"wrap",justifyContent:"center",width:"100%"}}>
-        {this.state.topRow.map((letter,idx)=> 
-        <div className='keyStyle' key={letter} onClick={this.handleClick} >{letter}</div>
-        )}</div>  <br/>
-        <div style={{display: "flex",flexWrap:"wrap",justifyContent:"center",width:"100%"}}>
-        {this.state.middleRow.map((letter,idx)=> 
-        <div className='keyStyle' key={letter} onClick={this.handleClick} >{letter}</div>
-        )}</div><br/>
-        <div style={{display: "flex",flexWrap:"wrap",justifyContent:"center",width:"100%"}}>
-        {this.state.bottomRow.map((letter,idx)=> 
-        <div className='keyStyle' key={letter} onClick={this.handleClick} >{letter}</div>
-        )}
-        </div>
+          
+          <div style={{display: "flex",flexWrap:"wrap",justifyContent:"center",width:"100%"}}>
+            {this.state.topRow.map((letter,idx)=> 
+            <div className='keyStyle' key={letter} onClick={this.handleClick} >{letter}</div>
+            )}
+          </div>  
+          
+          <br/>
+
+          <div style={{display: "flex",flexWrap:"wrap",justifyContent:"center",width:"100%"}}>
+            {this.state.middleRow.map((letter,idx)=> 
+            <div className='keyStyle' key={letter} onClick={this.handleClick} >{letter}</div>
+            )}
+          </div>
+
+          <br/>
+
+          <div style={{display: "flex",flexWrap:"wrap",justifyContent:"center",width:"100%"}}>
+          {this.state.bottomRow.map((letter,idx)=> 
+          <div className='keyStyle' key={letter} onClick={this.handleClick} >{letter}</div>
+          )}
+          </div>
+
         </div>
        )
 
